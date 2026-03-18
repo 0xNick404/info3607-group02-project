@@ -1,0 +1,29 @@
+# Temporary and cache files
+*.pyc
+__pycache__/
+.DS_Store
+
+# Large binary files
+**/*.vmdk
+**/*.qcow2
+**/*.iso
+**/*.vdi
+
+# Runtime/Temporary data
+*.log
+*_log.txt
+*_stdout.txt
+dynamips_*
+project-files/tmp/
+*.ghost
+
+# Dynamips runtime files (auto-generated, only keep configs)
+project-files/dynamips/**/c3745_i*_rom
+project-files/dynamips/**/c3745_i*_rommon_vars
+project-files/dynamips/**/c3745_i*_slot*
+project-files/dynamips/**/c3745_i*_lock
+project-files/dynamips/**/c3745_i*_ssa
+
+# Personal settings
+gns3_server.conf
+gns3_gui.conf
