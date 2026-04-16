@@ -1,17 +1,21 @@
 enable
 configure terminal
 
-interface f0/0
- ip nat inside
- no shutdown
+hostname S3-HO1
 
-interface s0/0
- ip nat outside
- no shutdown
+interface FastEthernet0/0
+ip address 10.0.100.1 255.255.255.0
+ip nat inside
+no shutdown
 
-access-list 1 permit 10.0.0.0 0.255.255.255
+interface Serial0/0
+ip address 10.0.7.1 255.255.255.252
+ip nat outside
+no shutdown
 
-ip nat inside source list 1 interface s0/0 overload
+access-list 1 permit 10.0.100.0 0.0.0.255
+
+ip nat inside source list 1 interface Serial0/0 overload
 
 end
 write memory
