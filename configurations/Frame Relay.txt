@@ -1,0 +1,302 @@
+!! ! SA-R (St. Augustine)
+
+config t
+
+map-class frame-relay CIR_SA_CF
+ frame-relay cir 64000
+ exit
+
+map-class frame-relay CIR_SA_STUD1
+ frame-relay cir 256000
+ exit
+
+interface serial0/0
+ description SA-R to FR3 link
+ no ip address
+ encapsulation frame-relay
+ frame-relay traffic-shaping
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0.210 point-to-point
+ description Link to CF-R
+ ip address 10.0.0.6 255.255.255.252
+ frame-relay interface-dlci 210
+ class CIR_SA_CF
+ exit
+ exit
+
+interface serial0/0.305 point-to-point
+ description Link to FRX1
+ ip address 10.0.0.9 255.255.255.252
+ frame-relay interface-dlci 305
+ class CIR_SA_STUD1
+ exit
+ exit
+
+wr
+
+
+!! ! CF-R (Champs Fleurs)
+
+config t
+
+map-class frame-relay CIR_CF_SA
+ frame-relay cir 64000
+ exit
+
+interface serial0/0
+ description CF-R to FR2 link
+ no ip address
+ encapsulation frame-relay
+ frame-relay traffic-shaping
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0.110 point-to-point
+ description Link to STUD1
+ ip address 10.0.0.2 255.255.255.252
+ frame-relay interface-dlci 110
+ exit
+ exit
+
+interface serial0/0.205 point-to-point
+ description Link to SA-R
+ ip address 10.0.0.5 255.255.255.252
+ frame-relay interface-dlci 205
+ class CIR_CF_SA
+ exit
+ exit
+
+wr
+
+
+!! ! FRX1
+
+config t
+
+map-class frame-relay CIR_SA
+ frame-relay cir 256000
+ exit
+
+interface serial0/0
+ description FRX1 to FR4 link
+ no ip address
+ encapsulation frame-relay
+ frame-relay traffic-shaping
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0.310 point-to-point
+ description Link to SA-R
+ ip address 10.0.0.10 255.255.255.252
+ frame-relay interface-dlci 310
+ class CIR_SA
+ exit
+ exit
+
+interface serial0/0.405 point-to-point
+ description Link to STUD1
+ ip address 192.168.100.2 255.255.255.252
+ frame-relay interface-dlci 405
+ exit
+ exit
+
+wr
+
+
+!! ! STUD1
+
+config t
+
+map-class frame-relay CIR_STUD1_SA
+ frame-relay cir 256000
+ exit
+
+interface serial0/0
+ description STUD1 to FR1 link
+ no ip address
+ encapsulation frame-relay
+ frame-relay traffic-shaping
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0.105 point-to-point
+ description Link to CF-R
+ ip address 10.0.0.1 255.255.255.252
+ frame-relay interface-dlci 105
+ exit
+ exit
+
+interface serial0/0.410 point-to-point
+ description Link to FRX1
+ ip address 192.168.100.1 255.255.255.252
+ frame-relay interface-dlci 410
+ class CIR_STUD1_SA
+ exit
+ exit
+
+wr
+
+
+!! ! FR1
+
+config t
+
+frame-relay switching
+
+interface serial0/1
+ description FR1 to FR2 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 110 interface serial0/0 105
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/2
+ description FR1 to FR4 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 405 interface serial0/0 410
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0
+ description FR1 to STUD1 link
+ encapsulation frame-relay
+ clock rate 512000
+ frame-relay intf-type dce
+ frame-relay route 105 interface serial0/1 110
+ frame-relay route 410 interface serial0/2 405
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+
+!! ! FR2
+
+config t
+
+frame-relay switching
+
+interface serial0/1
+ description FR2 to FR3 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 210 interface serial0/0 205
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/2
+ description FR2 to FR1 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 105 interface serial0/0 110
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0
+ description FR2 to CF-R link
+ encapsulation frame-relay
+ clock rate 128000
+ frame-relay intf-type dce
+ frame-relay route 205 interface serial0/1 210
+ frame-relay route 110 interface serial0/2 105
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+
+!! ! FR3
+
+config t
+
+frame-relay switching
+
+interface serial0/1
+ description FR3 to FR4 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 310 interface serial0/0 305
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/2
+ description FR3 to FR2 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 205 interface serial0/0 210
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0
+ description FR3 to SA-R link
+ encapsulation frame-relay
+ clock rate 512000
+ frame-relay intf-type dce
+ frame-relay route 305 interface serial0/1 310
+ frame-relay route 210 interface serial0/2 205
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+!! ! FR4
+
+config t
+
+frame-relay switching
+
+interface serial0/1
+ description FR4 to FR1 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 410 interface serial0/0 405
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/2
+ description FR4 to FR3 link
+ no keepalive
+ encapsulation frame-relay
+ frame-relay intf-type nni
+ frame-relay route 305 interface serial0/0 310
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/0
+ description FR4 to FRX1 link
+ encapsulation frame-relay
+ clock rate 512000
+ frame-relay intf-type dce
+ frame-relay route 405 interface serial0/1 410
+ frame-relay route 310 interface serial0/2 305
+ shutdown
+ no shutdown
+ exit
+
+wr
