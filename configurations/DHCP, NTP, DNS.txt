@@ -1,0 +1,77 @@
+!! ! FTP-R
+
+config t
+
+interface Loopback0
+ip address 196.4.160.12 255.255.255.255
+no shutdown
+exit
+
+ip dns server
+ip domain-lookup
+ip name-server 196.4.160.12
+
+ip host ftp.is.co.za 196.4.160.12
+ip host FTP-PC1 172.16.100.10
+ip host SA-PC1 172.16.10.10
+ip host CF-PC1 172.16.20.10
+ip host SA-PC2 172.16.30.10
+ip host SA-PC3 172.16.40.10
+ip host SA-PC41 172.16.50.10
+ip host SA-PC42 172.16.50.11
+ip host SA-PC51 172.16.60.10
+ip host SA-PC52 172.16.60.11
+
+ntp master 1
+ntp source Loopback0
+
+service dhcp
+
+ip dhcp excluded-address 172.16.100.1 172.16.100.5
+ip dhcp pool FTP-PC1-Pool
+network 172.16.100.0 255.255.255.224
+default-router 172.16.100.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.10.1 172.16.10.5
+ip dhcp pool SA-PC1-Pool
+network 172.16.10.0 255.255.255.224
+default-router 172.16.10.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.20.1 172.16.20.5
+ip dhcp pool CF-PC1-Pool
+network 172.16.20.0 255.255.255.224
+default-router 172.16.20.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.30.1 172.16.30.5
+ip dhcp pool SA-PC2-Pool
+network 172.16.30.0 255.255.255.224
+default-router 172.16.30.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.40.1 172.16.40.5
+ip dhcp pool SA-PC3-Pool
+network 172.16.40.0 255.255.255.224
+default-router 172.16.40.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.50.1 172.16.50.5
+ip dhcp pool SA-PC4-Pool
+network 172.16.50.0 255.255.255.224
+default-router 172.16.50.1
+dns-server 196.4.160.12
+exit
+
+ip dhcp excluded-address 172.16.60.1 172.16.60.5
+ip dhcp pool SA-PC5-Pool
+network 172.16.60.0 255.255.255.224
+default-router 172.16.60.1
+dns-server 196.4.160.12
+exit

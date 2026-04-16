@@ -72,3 +72,121 @@ save
 
 show ip
 ping 172.16.30.1
+
+
+!! ! FTP-R
+
+config t
+
+interface fa 0/0
+ ip address 172.16.100.1 255.255.255.224
+ shutdown
+ no shutdown
+ end
+
+show ip interface brief
+
+wr
+
+
+!! ! FTP-PC1
+
+ip 172.16.100.10 255.255.255.224 172.16.100.1
+save
+
+show ip
+ping 172.16.100.1
+
+
+!! ! STUD2
+
+config t
+
+interface fa 0/0
+ ip address 172.16.40.1 255.255.255.224
+ shutdown
+ no shutdown
+ end
+
+show ip interface brief
+
+wr
+
+
+!! ! SA-PC3
+
+ip 172.16.40.10 255.255.255.224 172.16.40.1
+save
+
+show ip
+ping 172.16.40.1
+
+
+!! ! STUD3
+
+config t
+
+interface fa 0/0
+ ip address 172.16.50.1 255.255.255.224
+ shutdown
+ no shutdown
+ end
+
+show ip interface brief
+
+wr
+
+
+!! ! SA-PC41
+
+ip 172.16.50.10 255.255.255.224 172.16.50.1
+save
+
+show ip
+ping 172.16.50.1
+ping 172.16.50.11
+
+
+!! ! SA-PC42
+
+ip 172.16.50.11 255.255.255.224 172.16.50.1
+save
+
+show ip
+ping 172.16.50.1
+ping 172.16.50.10
+
+
+!! ! STUD4
+
+config t
+
+interface fa 0/0
+ ip address 172.16.60.1 255.255.255.224
+ shutdown
+ no shutdown
+ end
+
+show ip interface brief
+
+wr
+
+
+!! ! SA-PC51
+
+ip 172.16.60.10 255.255.255.224 172.16.60.1
+save
+
+show ip
+ping 172.16.60.1
+ping 172.16.60.11
+
+
+!! ! SA-PC52
+
+ip 172.16.60.11 255.255.255.224 172.16.60.1
+save
+
+show ip
+ping 172.16.60.1
+ping 172.16.60.10
