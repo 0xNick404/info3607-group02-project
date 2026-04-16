@@ -1,11 +1,13 @@
 enable
 configure terminal
 
+hostname S3-HO10
+
 access-list 100 deny ip 10.0.7.0 0.0.0.255 any
 access-list 100 permit ip any any
 
-interface s0/1
-ip access-group 100 in
+interface Serial0/1
+ ip access-group 100 in
 
 end
 write memory
