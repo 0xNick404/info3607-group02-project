@@ -1,21 +1,13 @@
 enable
 configure terminal
 
-hostname S3-HO10
+hostname S3-HO1
 
-interface FastEthernet0/0
-ip address 10.0.100.1 255.255.255.0
-ip nat inside
-no shutdown
+access-list 100 deny ip 10.0.7.0 0.0.0.255 any
+access-list 100 permit ip any any
 
-interface Serial0/0
-ip address 10.0.7.1 255.255.255.252
-ip nat outside
-no shutdown
-
-access-list 1 permit 10.0.100.0 0.0.0.255
-
-ip nat inside source list 1 interface Serial0/0 overload
+interface Serial0/1
+ ip access-group 100 in
 
 end
 write memory
