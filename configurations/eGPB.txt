@@ -3,11 +3,12 @@ configure terminal
 
 hostname S3-HO1
 
-access-list 100 deny ip 10.0.7.0 0.0.0.255 any
-access-list 100 permit ip any any
+router bgp 10
+ bgp log-neighbor-changes
+ neighbor 10.0.7.2 remote-as 11
 
-interface Serial0/1
- ip access-group 100 in
+ network 10.0.7.0 mask 255.255.255.252
+ network 10.0.100.0 mask 255.255.255.0
 
 end
 write memory
