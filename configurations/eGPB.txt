@@ -1,0 +1,13 @@
+enable
+configure terminal
+
+interface s0/0
+ip address 10.0.7.1 255.255.255.252
+no shutdown
+
+interface s0/1
+ip address 10.0.8.1 255.255.255.252
+no shutdown
+
+end
+write memory
