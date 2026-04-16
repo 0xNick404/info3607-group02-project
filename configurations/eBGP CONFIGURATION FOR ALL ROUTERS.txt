@@ -1,0 +1,274 @@
+================================================================================
+                    eBGP CONFIGURATION FOR ALL ROUTERS
+                    Student ID: 816046667
+================================================================================
+STUD2 
+router bgp 65020
+ bgp router-id 192.168.2.1
+ neighbor 100.73.40.1 remote-as 65000
+ neighbor 100.73.40.1 description eBGP to Upstream
+ !
+ address-family ipv4
+  neighbor 100.73.40.1 activate
+  network 192.168.2.0 mask 255.255.255.0
+ exit-address-family
+
+================================================================================
+S2-HO1 (AS 65001) - Gateway Router
+================================================================================
+router bgp 65001
+ bgp router-id 100.73.40.1
+ neighbor 100.73.40.2 remote-as 65000
+ neighbor 100.73.40.2 description eBGP to Gateway
+ !
+ address-family ipv4
+  neighbor 100.73.40.2 activate
+  network 100.73.40.0 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO2 (AS 65002)
+================================================================================
+router bgp 65002
+ bgp router-id 172.17.1.179
+ neighbor 172.18.2.94 remote-as 65003
+ neighbor 172.18.2.94 description eBGP to S2-HO3
+ !
+ address-family ipv4
+  neighbor 172.18.2.94 activate
+  network 172.17.1.176 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO3 (AS 65003)
+================================================================================
+router bgp 65003
+ bgp router-id 172.18.2.94
+ neighbor 172.17.1.179 remote-as 65002
+ neighbor 172.17.1.179 description eBGP to S2-HO2
+ neighbor 172.18.2.10 remote-as 65004
+ neighbor 172.18.2.10 description eBGP to S2-HO4
+ !
+ address-family ipv4
+  neighbor 172.17.1.179 activate
+  neighbor 172.18.2.10 activate
+  network 172.18.2.88 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO4 (AS 65004)
+================================================================================
+router bgp 65004
+ bgp router-id 172.18.2.10
+ neighbor 172.18.2.9 remote-as 65003
+ neighbor 172.18.2.9 description eBGP to S2-HO3
+ neighbor 172.17.2.173 remote-as 65005
+ neighbor 172.17.2.173 description eBGP to S2-HO5
+ !
+ address-family ipv4
+  neighbor 172.18.2.9 activate
+  neighbor 172.17.2.173 activate
+  network 172.18.2.8 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO5 (AS 65005)
+================================================================================
+router bgp 65005
+ bgp router-id 172.17.2.173
+ neighbor 172.17.2.172 remote-as 65004
+ neighbor 172.17.2.172 description eBGP to S2-HO4
+ neighbor 84.16.6.245 remote-as 65006
+ neighbor 84.16.6.245 description eBGP to S2-HO6
+ !
+ address-family ipv4
+  neighbor 172.17.2.172 activate
+  neighbor 84.16.6.245 activate
+  network 172.17.2.168 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO6 (AS 65006)
+================================================================================
+router bgp 65006
+ bgp router-id 84.16.6.245
+ neighbor 84.16.6.244 remote-as 65005
+ neighbor 84.16.6.244 description eBGP to S2-HO5
+ neighbor 84.16.15.177 remote-as 65007
+ neighbor 84.16.15.177 description eBGP to S2-HO7
+ !
+ address-family ipv4
+  neighbor 84.16.6.244 activate
+  neighbor 84.16.15.177 activate
+  network 84.16.6.240 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO7 (AS 65007)
+================================================================================
+router bgp 65007
+ bgp router-id 84.16.15.177
+ neighbor 84.16.15.176 remote-as 65006
+ neighbor 84.16.15.176 description eBGP to S2-HO6
+ neighbor 129.250.9.86 remote-as 65008
+ neighbor 129.250.9.86 description eBGP to S2-HO8
+ !
+ address-family ipv4
+  neighbor 84.16.15.176 activate
+  neighbor 129.250.9.86 activate
+  network 84.16.15.168 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO8 (AS 65008)
+================================================================================
+router bgp 65008
+ bgp router-id 129.250.9.86
+ neighbor 129.250.9.85 remote-as 65007
+ neighbor 129.250.9.85 description eBGP to S2-HO7
+ neighbor 129.250.3.121 remote-as 65009
+ neighbor 129.250.3.121 description eBGP to S2-HO9
+ !
+ address-family ipv4
+  neighbor 129.250.9.85 activate
+  neighbor 129.250.3.121 activate
+  network 129.250.9.80 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO9 (AS 65009)
+================================================================================
+router bgp 65009
+ bgp router-id 129.250.3.121
+ neighbor 129.250.3.120 remote-as 65008
+ neighbor 129.250.3.120 description eBGP to S2-HO8
+ neighbor 129.250.6.1 remote-as 65010
+ neighbor 129.250.6.1 description eBGP to S2-HO10
+ !
+ address-family ipv4
+  neighbor 129.250.3.120 activate
+  neighbor 129.250.6.1 activate
+  network 129.250.3.112 mask 255.255.255.240
+ exit-address-family
+
+================================================================================
+S2-HO10 (AS 65010)
+================================================================================
+router bgp 65010
+ bgp router-id 129.250.6.1
+ neighbor 129.250.6.2 remote-as 65009
+ neighbor 129.250.6.2 description eBGP to S2-HO9
+ neighbor 129.250.6.73 remote-as 65011
+ neighbor 129.250.6.73 description eBGP to S2-HO11
+ !
+ address-family ipv4
+  neighbor 129.250.6.2 activate
+  neighbor 129.250.6.73 activate
+  network 129.250.6.0 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO11 (AS 65011)
+================================================================================
+router bgp 65011
+ bgp router-id 129.250.6.73
+ neighbor 129.250.6.74 remote-as 65010
+ neighbor 129.250.6.74 description eBGP to S2-HO10
+ neighbor 129.250.4.166 remote-as 65012
+ neighbor 129.250.4.166 description eBGP to S2-HO12
+ !
+ address-family ipv4
+  neighbor 129.250.6.74 activate
+  neighbor 129.250.4.166 activate
+  network 129.250.6.72 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO12 (AS 65012)
+================================================================================
+router bgp 65012
+ bgp router-id 129.250.4.166
+ neighbor 129.250.4.165 remote-as 65011
+ neighbor 129.250.4.165 description eBGP to S2-HO11
+ neighbor 129.250.2.109 remote-as 65013
+ neighbor 129.250.2.109 description eBGP to S2-HO13
+ !
+ address-family ipv4
+  neighbor 129.250.4.165 activate
+  neighbor 129.250.2.109 activate
+  network 129.250.4.160 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO13 (AS 65013)
+================================================================================
+router bgp 65013
+ bgp router-id 129.250.2.109
+ neighbor 129.250.2.110 remote-as 65012
+ neighbor 129.250.2.110 description eBGP to S2-HO12
+ neighbor 129.250.5.10 remote-as 65014
+ neighbor 129.250.5.10 description eBGP to S2-HO14
+ !
+ address-family ipv4
+  neighbor 129.250.2.110 activate
+  neighbor 129.250.5.10 activate
+  network 129.250.2.104 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO14 (AS 65014)
+================================================================================
+router bgp 65014
+ bgp router-id 129.250.5.10
+ neighbor 129.250.5.9 remote-as 65013
+ neighbor 129.250.5.9 description eBGP to S2-HO13
+ neighbor 83.231.235.221 remote-as 65015
+ neighbor 83.231.235.221 description eBGP to S2-HO15
+ !
+ address-family ipv4
+  neighbor 129.250.5.9 activate
+  neighbor 83.231.235.221 activate
+  network 129.250.5.8 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO15 (AS 65015)
+================================================================================
+router bgp 65015
+ bgp router-id 83.231.235.221
+ neighbor 83.231.235.222 remote-as 65014
+ neighbor 83.231.235.222 description eBGP to S2-HO14
+ neighbor 168.209.1.13 remote-as 65016
+ neighbor 168.209.1.13 description eBGP to S2-HO16
+ !
+ address-family ipv4
+  neighbor 83.231.235.222 activate
+  neighbor 168.209.1.13 activate
+  network 83.231.235.216 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+S2-HO16 (AS 65016)
+================================================================================
+router bgp 65016
+ bgp router-id 168.209.0.12
+ neighbor 168.209.1.12 remote-as 65015
+ neighbor 168.209.1.12 description eBGP to S2-HO15
+ neighbor 168.209.0.13 remote-as 65017
+ neighbor 168.209.0.13 description eBGP to SA-SW77
+ !
+ address-family ipv4
+  neighbor 168.209.1.12 activate
+  neighbor 168.209.0.13 activate
+  network 168.209.0.8 mask 255.255.255.248
+ exit-address-family
+
+================================================================================
+VERIFICATION COMMANDS (Run on each router)
+================================================================================
+show ip bgp summary
+show ip bgp neighbors
+show ip route bgp
+================================================================================
+END OF eBGP CONFIGURATION
+================================================================================

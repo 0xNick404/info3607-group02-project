@@ -1,0 +1,177 @@
+================================================================================
+                    VERIFICATION COMMANDS FOR ALL ROUTERS
+                    Student ID: 816046667
+================================================================================
+
+========================================
+STUD2 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+show ip bgp neighbors
+ping 100.73.40.1
+ping 192.168.1.1
+
+========================================
+S2-HO1 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 100.73.40.10
+ping 100.73.40.2
+
+========================================
+S2-HO2 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 172.18.2.94
+ping 100.73.40.1
+
+========================================
+S2-HO3 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 172.17.1.179
+ping 172.18.2.10
+
+========================================
+S2-HO4 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 172.18.2.9
+ping 172.17.2.173
+
+========================================
+S2-HO5 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 172.17.2.172
+ping 84.16.6.245
+
+========================================
+S2-HO6 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 84.16.6.244
+ping 84.16.15.177
+
+========================================
+S2-HO7 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 84.16.15.176
+ping 129.250.9.86
+
+========================================
+S2-HO8 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.9.85
+ping 129.250.3.121
+
+========================================
+S2-HO9 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.3.120
+ping 129.250.6.1
+
+========================================
+S2-HO10 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.6.2
+ping 129.250.6.73
+
+========================================
+S2-HO11 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.6.74
+ping 129.250.4.166
+
+========================================
+S2-HO12 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.4.165
+ping 129.250.2.109
+
+========================================
+S2-HO13 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.2.110
+ping 129.250.5.10
+
+========================================
+S2-HO14 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 129.250.5.9
+ping 83.231.235.221
+
+========================================
+S2-HO15 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 83.231.235.222
+ping 168.209.0.13
+
+========================================
+S2-HO16 Verification
+========================================
+show ip interface brief
+show ip route
+show ip route bgp
+show ip bgp summary
+ping 168.209.0.12
+ping 168.209.1.12
+========================================
+
