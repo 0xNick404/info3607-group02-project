@@ -161,7 +161,7 @@ interface serial0/1
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 110 interface serial0/0 105
+ frame-relay route 101 interface serial0/0 105
  shutdown
  no shutdown
  exit
@@ -171,7 +171,7 @@ interface serial0/2
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 405 interface serial0/0 410
+ frame-relay route 103 interface serial0/0 410
  shutdown
  no shutdown
  exit
@@ -181,8 +181,8 @@ interface serial0/0
  encapsulation frame-relay
  clock rate 512000
  frame-relay intf-type dce
- frame-relay route 105 interface serial0/1 110
- frame-relay route 410 interface serial0/2 405
+ frame-relay route 105 interface serial0/1 101
+ frame-relay route 410 interface serial0/2 103
  shutdown
  no shutdown
  exit
@@ -201,7 +201,7 @@ interface serial0/1
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 210 interface serial0/0 205
+ frame-relay route 100 interface serial0/0 205
  shutdown
  no shutdown
  exit
@@ -211,7 +211,7 @@ interface serial0/2
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 105 interface serial0/0 110
+ frame-relay route 101 interface serial0/0 110
  shutdown
  no shutdown
  exit
@@ -221,8 +221,8 @@ interface serial0/0
  encapsulation frame-relay
  clock rate 128000
  frame-relay intf-type dce
- frame-relay route 205 interface serial0/1 210
- frame-relay route 110 interface serial0/2 105
+ frame-relay route 205 interface serial0/1 100
+ frame-relay route 110 interface serial0/2 101
  shutdown
  no shutdown
  exit
@@ -241,7 +241,7 @@ interface serial0/1
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 310 interface serial0/0 305
+ frame-relay route 102 interface serial0/0 305
  shutdown
  no shutdown
  exit
@@ -251,7 +251,7 @@ interface serial0/2
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 205 interface serial0/0 210
+ frame-relay route 100 interface serial0/0 210
  shutdown
  no shutdown
  exit
@@ -261,8 +261,8 @@ interface serial0/0
  encapsulation frame-relay
  clock rate 512000
  frame-relay intf-type dce
- frame-relay route 305 interface serial0/1 310
- frame-relay route 210 interface serial0/2 205
+ frame-relay route 305 interface serial0/1 102
+ frame-relay route 210 interface serial0/2 100
  shutdown
  no shutdown
  exit
@@ -280,7 +280,7 @@ interface serial0/1
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 410 interface serial0/0 405
+ frame-relay route 103 interface serial0/0 405
  shutdown
  no shutdown
  exit
@@ -290,7 +290,7 @@ interface serial0/2
  no keepalive
  encapsulation frame-relay
  frame-relay intf-type nni
- frame-relay route 305 interface serial0/0 310
+ frame-relay route 102 interface serial0/0 310
  shutdown
  no shutdown
  exit
@@ -300,8 +300,8 @@ interface serial0/0
  encapsulation frame-relay
  clock rate 512000
  frame-relay intf-type dce
- frame-relay route 405 interface serial0/1 410
- frame-relay route 310 interface serial0/2 305
+ frame-relay route 405 interface serial0/1 103
+ frame-relay route 310 interface serial0/2 102
  shutdown
  no shutdown
  exit
