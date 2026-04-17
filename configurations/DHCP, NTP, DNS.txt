@@ -75,3 +75,73 @@ network 172.16.60.0 255.255.255.224
 default-router 172.16.60.1
 dns-server 196.4.160.12
 exit
+
+
+!! ! SA-R
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! CF-R
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! STUD1
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! STUD2
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! STUD3
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! STUD4
+
+config t
+
+interface fa 0/0
+ ip helper-address 196.4.160.12
+ end
+
+wr
+
+
+!! ! 'ntp server 196.4.160.12' was configured on every router
+
