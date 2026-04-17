@@ -59,6 +59,7 @@ interface serial0/0.110 point-to-point
  description Link to STUD1
  ip address 10.0.0.2 255.255.255.252
  frame-relay interface-dlci 110
+ class CIR_CF_SA
  exit
  exit
 
@@ -102,6 +103,7 @@ interface serial0/0.405 point-to-point
  description Link to STUD1
  ip address 192.168.100.2 255.255.255.252
  frame-relay interface-dlci 405
+ class CIR_SA
  exit
  exit
 
@@ -114,6 +116,10 @@ config t
 
 map-class frame-relay CIR_STUD1_SA
  frame-relay cir 256000
+ exit
+
+map-class frame-relay CIR_STUD1_CF
+ frame-relay cir 64000
  exit
 
 interface serial0/0
@@ -129,6 +135,7 @@ interface serial0/0.105 point-to-point
  description Link to CF-R
  ip address 10.0.0.1 255.255.255.252
  frame-relay interface-dlci 105
+ class CIR_STUD1_CF
  exit
  exit
 
