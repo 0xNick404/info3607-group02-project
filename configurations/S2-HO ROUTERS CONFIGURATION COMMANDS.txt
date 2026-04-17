@@ -1,0 +1,439 @@
+================================================================================
+                    S2-HO ROUTERS CONFIGURATION COMMANDS
+                    Student ID: 816046667
+================================================================================
+
+!===============================================================================
+! STUD2 Router Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname STUD2
+!
+! Configure LAN Interface
+interface fastethernet 0/0
+ ip address 192.168.2.1 255.255.255.0
+ no shutdown
+ exit
+!
+! Configure WAN Interface (to upstream router)
+interface serial 0/0
+ ip address 100.73.40.10 255.255.255.248
+ no shutdown
+ exit
+!
+! Configure Second Serial Interface (for future connections)
+interface serial 0/1
+ ip address 172.17.1.200 255.255.255.248
+ no shutdown
+ exit
+!
+! Default route to upstream gateway
+ip route 0.0.0.0 0.0.0.0 100.73.40.1
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO1 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO1
+!
+interface serial 0/1
+ ip address 100.73.40.1 255.255.255.248
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 100.73.40.2
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO2 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO2
+!
+interface serial 0/0
+ ip address 172.17.1.179 255.255.255.248
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 172.17.1.178
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO3 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO3
+!
+interface serial 0/0
+ ip address 172.18.2.94 255.255.255.248
+ description Link to S2-HO2 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 172.18.2.9 255.255.255.248
+ description Link to S2-HO4 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 172.18.2.93
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO4 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO4
+!
+interface serial 0/0
+ ip address 172.18.2.10 255.255.255.248
+ description Link to S2-HO3 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 172.17.2.172 255.255.255.248
+ description Link to S2-HO5 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 172.18.2.9
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO5 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO5
+!
+interface serial 0/0
+ ip address 172.17.2.173 255.255.255.248
+ description Link to S2-HO4 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 84.16.6.244 255.255.255.248
+ description Link to S2-HO6 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 172.17.2.172
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO6 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO6
+!
+interface serial 0/0
+ ip address 84.16.6.245 255.255.255.248
+ description Link to S2-HO5 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 84.16.15.176 255.255.255.248
+ description Link to S2-HO7 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 84.16.6.244
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO7 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO7
+!
+interface serial 0/0
+ ip address 84.16.15.177 255.255.255.248
+ description Link to S2-HO6 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.9.85 255.255.255.248
+ description Link to S2-HO8 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 84.16.15.176
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO8 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO8
+!
+interface serial 0/0
+ ip address 129.250.9.86 255.255.255.248
+ description Link to S2-HO7 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.3.120 255.255.255.240
+ description Link to S2-HO9 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.9.85
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO9 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO9
+!
+interface serial 0/0
+ ip address 129.250.3.121 255.255.255.240
+ description Link to S2-HO8 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.6.2 255.255.255.248
+ description Link to S2-HO10 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.3.120
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO10 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO10
+!
+interface serial 0/0
+ ip address 129.250.6.1 255.255.255.248
+ description Link to S2-HO9 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.6.74 255.255.255.248
+ description Link to S2-HO11 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.6.2
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO11 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO11
+!
+interface serial 0/0
+ ip address 129.250.6.73 255.255.255.248
+ description Link to S2-HO10 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.4.165 255.255.255.248
+ description Link to S2-HO12 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.6.74
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO12 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO12
+!
+interface serial 0/0
+ ip address 129.250.4.166 255.255.255.248
+ description Link to S2-HO11 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.2.110 255.255.255.248
+ description Link to S2-HO13 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.4.165
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO13 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO13
+!
+interface serial 0/0
+ ip address 129.250.2.109 255.255.255.248
+ description Link to S2-HO12 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 129.250.5.9 255.255.255.248
+ description Link to S2-HO14 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.2.110
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO14 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO14
+!
+interface serial 0/0
+ ip address 129.250.5.10 255.255.255.248
+ description Link to S2-HO13 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 83.231.235.222 255.255.255.248
+ description Link to S2-HO15 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 129.250.5.9
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO15 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO15
+!
+interface serial 0/0
+ ip address 83.231.235.221 255.255.255.248
+ description Link to S2-HO14 Serial0/1
+ no shutdown
+ exit
+!
+interface serial 0/1
+ ip address 168.209.0.12 255.255.255.248
+ description Link to S2-HO16 Serial0/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 83.231.235.222
+!
+end
+write memory
+
+!===============================================================================
+! S2-HO16 Configuration
+!===============================================================================
+
+enable
+configure terminal
+!
+hostname S2-HO16
+!
+interface serial 0/0
+ ip address 168.209.0.13 255.255.255.248
+ description Link to S2-HO15 Serial0/1
+ no shutdown
+ exit
+!
+interface fastethernet 0/0
+ ip address 168.209.0.12 255.255.255.248
+ description Link to SA-SW77 FastEthernet1/0
+ no shutdown
+ exit
+!
+ip route 0.0.0.0 0.0.0.0 168.209.0.12
+!
+end
+write memory
