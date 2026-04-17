@@ -1,0 +1,1624 @@
+STUD4:
+enable
+conf t
+interface f0/0
+ip address 192.168.1.1 255.255.255.0
+no shutdown
+
+SA-PC51:
+ip 192.168.1.2 255.255.255.0 192.168.1.1
+
+SA-PC52:
+ip 192.168.1.3 255.255.255.0 192.168.1.1
+
+SA-PC51:
+ping 192.168.1.3
+
+STUD4:
+conf t
+interface s0/0
+ip address 200.1.111.233 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO1:
+conf t
+interface s0/0
+ip address 200.1.111.234 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO3:
+enable
+conf t
+interface s0/1
+ip address 100.64.1.129 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO2:
+enable
+conf t
+interface s0/1
+ip address 200.1.107.242 255.255.255.252
+no shutdown
+end
+w
+wr
+
+//to HO4
+S4-HO5:
+enable
+conf t
+interface s0/0
+ip address 200.1.107.145 255.255.255.252
+no shutdown
+end
+
+//to HO5
+enable
+conf t
+interface s0/0
+ip address 200.1.111.26 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO4:
+enable
+conf t
+interface s0/1
+ip address 200.1.107.146 255.255.255.252
+no shutdown
+end
+
+S4-HO6:
+enable
+conf t
+interface s0/0
+ip address 200.1.111.18 255.255.255.252
+no shutdown
+end
+w
+wr
+
+//to HO7
+enable
+conf t
+interface s0/1
+ip address 190.242.180.45 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO7:
+enable
+conf t
+interface s0/0
+ip address 190.242.180.46 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO8
+enable
+conf t
+interface s0/1
+ip address 69.79.100.129 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO9
+S4-HO8:
+enable
+conf t
+interface s0/1
+ip address 69.79.100.37 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO9:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.38 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO10:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.2 255.255.255.252
+no shutdown
+end
+wr
+
+//to H10
+S4-HO9:
+enable
+conf t
+interface s0/1
+ip address 69.79.100.1 255.255.255.252
+no shutdown
+end
+wr
+
+//to H011
+S4-HO10:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.2 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO11:
+enable
+conf t
+interface s0/0
+ip address 154.54.167.186 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO12
+enable
+conf t
+interface s0/1
+ip address 154.54.47.50 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO12:
+enable
+conf t
+interface s0/0
+ip address 154.54.47.49 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO13:
+enable
+conf t
+interface s0/0
+ip address 154.54.
+ip address 154.54.169.177 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO13
+S4-HO12:
+enable
+conf t
+interface s0/1
+ip address 154.54.169.178 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO14:
+enable
+conf t
+interface s0/0
+ip address 154.54.170.70 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO14
+S4-HO13:
+enable
+conf t
+interface s0/1
+ip address 154.54.170.69 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO15:
+enable
+conf t
+interface s0/0
+ip address 154.54.167.70 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO15
+S4-HO14:
+enable
+conf t
+interface s0/1
+ip address 154.54.167.69 255.255.255.252
+no shutdown
+end
+wr
+wr
+
+S4-HO16:
+enable
+conf t
+interface s0/0
+ip address 154.54.75.149 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO16
+S4-HO15:
+enable
+conf t
+interface s0/1
+ip address 154.54.75.150 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO17:
+enable
+conf t
+interface s0/0
+ip address 154.54.74.142 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO17
+S4-HO16:
+enable
+conf t
+interface s0/1
+ip address 154.54.74.141 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO18:
+enable
+conf t
+interface s0/0
+ip address 149.6.148.134 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO18
+S4-HO17:
+enable
+conf t
+interface s0/1
+ip address 149.6.148.133 255.255.255.252
+no shutdown
+end
+wr
+
+S4-HO19:
+enable
+conf t
+interface s0/0
+ip address 168.209.100.58 255.255.255.252
+no shutdown
+end
+wr
+
+//to HO19
+S4-HO18:
+enable
+conf t
+interface s0/1
+ip address 168.209.100.57 255.255.255.252
+no shutdown
+end
+wr
+
+STUD4:
+enable
+conf t
+router bgp 100
+no auto-summary
+neighbor 200.1.111.234 remote-as 1
+network 192.168.1.0 mask 255.255.255.0
+network 200.1.111.232 mask 255.255.255.252
+end
+wr
+
+S4-HO1:
+enable
+conf t
+router bgp 1
+no auto-summary
+neighbor 200.1.111.233 remote-as 100
+neighbor 200.1.107.2
+neighbor 200.1.107.242 remote-as 2
+network 200.1.111.232 mask 255.255.255.252
+network 200.1.107.240 mask 255.255.255.252
+end
+wr
+
+S4-HO2:
+enable
+conf t
+router bgp 2
+no auto-summary
+neighbor 200.1.107.241 remote-as 1
+neighbor 100.64.1.129 remote-as 3
+network 200.1.107.240 mask 255.255.255.252
+network 100.64.1.128 mask 255.255.255.252
+end
+wr
+
+S4-H03:
+S4-HO3:
+conf t
+router bgp 3
+no auto-summary
+neighbor 100.64.1.130 remote-as 2
+network 100.64.1.128 mask 255.255.255.252
+end
+w
+wr
+
+S4-HO4:
+enable
+conf t
+router bgp 4
+no auto-summary
+neighbor 200.1.111.26 remote-as 5
+network 200.1.111.24 mask 255.255.255.252
+end
+wr
+
+S4-HO5:
+conf t
+router bgp 5
+no auto-summary
+neighbor 200.1.111.25 remote-as 4
+neighbor 200.1.111.18 remote-as 6
+network 200.1.111.24 mask 255.255.255.252
+network 200.1.111.16 mask 255.255.255.252
+end
+wr
+
+S4-HO6:
+enable
+conf t
+router bgp 6
+no auto-summary
+neighbor 200.1.111.17 remote-as 5
+neighbor 190.242.180.46 remote-as 7
+network 200.1.111.16 mask 255.255.255.252
+network 190.242.180.44 mask 255.255.255.252
+end
+wr
+
+S4-HO7:
+conf t
+router bgp 7
+no auto-summary
+neighbor 190.242.180.45 remote-as 6
+neighbor 69.79.100.130 remote-as 8
+network 190.242.1
+network 190.242.180.44 mask 255.255.255.252
+network 69.79.100.128 mask 255.255.255.252
+end
+wr
+
+S4-HO8:
+enable
+conf t
+router bgp 8
+no auto-summary
+neighbor 69.79.100.129 remote-as 7
+neighbor 69.79.100.3
+neighbor 69.79.100.38 remote-as 9
+network 69.79.100.128 mask 255.255.255.252
+network 69.79.100.36 mask 255.255.255.252
+end
+wr
+
+S4-HO9:
+conf t
+router bgp 9
+no auto-summary
+neighbor 69.79.100.37 remote-as 8
+neighbor 69.79.100.2 remote-as 10
+network 69.79.100.36 mask 255.255.255.252
+network 69
+network 69.79.100.0 mask 255.255.255.252
+end
+wr
+
+S4-HO10:
+enable
+conf t
+router bgp 10
+no auto-summary
+neighbor 69.79.100.1 remote-as 9
+neighbor 154.54.167.186 remote-as 11
+network 69.79
+network 69.79.100.0 mask 255.255.255.252
+network 154.54.167.184 mask 255.255.255.252
+end
+wr
+
+S4-HO11:
+enable
+conf t
+router bgp 11
+no auto-summary
+neighbor 154.54.167.185 remote-as 10
+neighbor 154.54.47.49 remote-as 1
+neighbor 154.54.47.49 remote-as 12
+network 154.54.167.184 mask 255.255.255.252
+network 154.54.47.48 mask 255.255.255.252
+end
+wr
+
+S4-HO12:
+enable
+conf t
+router bgp 12
+no auto-summary
+neighbor 154.54.47.50 remote-as 11
+neighbor 154.5
+neighbor 154.54.169.177 remote-as 13
+network 154.54.47.48 mask 255.255.255.252
+network 154.54.169.176 mask 255.255.255.252
+end
+wr
+
+S4-HO13:
+enable
+conf t
+router bgp 13
+no auto-summary
+neighbor 154.54.169.178 remote-as 12
+neighbor 154.54.170.70 remote-as 14
+network 154.54.169.176 mask 255.
+network 154.54.169.176 mask 255.255.255.252
+network 154.54.170.68 mask 255.255.255.252
+end
+wr
+
+S4-HO14:
+enable
+conf t
+router bgp 14
+no auto-summary
+neighbor 154.54.170.69 remote-as 13
+neighbor 154.54.167.70 remote-as 15
+network 154.
+network 154.54.170.68 mask 255.255.255.252
+network 154.54.167.68 mask 255.255.255.252
+end
+wr
+
+S4-H015:
+S4-HO15:
+enable
+conf t
+router bgp 15
+no auto-summary
+neighbor 154.54.167.69 remote-as 14
+neighbor 154.54.75.149 remote-as 16
+network 154.54.167.68 ma
+network 154.54.167.68 mask 255.255.255.252
+network 154.54.75.148 mask 255.255.255.252
+end
+wr
+
+S4-HO16:
+enable
+conf t
+router bgp 16
+no auto-summary
+neighbor 154.54.75.150 remote-as 15
+neighbor 154.54.74.142 remote-as 17
+network 154.54.75.148 mask 255.255.255.252
+network 154.54.74.140 mask 255.255.255.252
+end
+wr
+
+S4-HO17:
+enable
+conf t
+router bgp 17
+no auto-summary
+neighbor 154.54.74.141 remote-as 16
+neighb
+neighbor 149.6.148.134 remote-as 18
+network 154.54.74.140 mask 255.255.255.252
+network 149.6.148.132 mask 255.255.255.252
+end
+wr
+
+S4-HO18:
+enable
+conf t
+router bgp 18
+no auto-summary
+neighbor 149.6.148.133 remote-as 17
+neighbor 168.209.100.58 remote-as 19
+network 149.6.148.132 mask 255.255.
+network 149.6.148.132 mask 255.255.255.252
+network 168.209.100.56 mask 255.255.255.252
+end
+wr
+
+S4-HO19:
+enable
+conf t
+router bgp 19
+no auto-summary
+neighbor 168.209.100.57 remote-as 18
+network 168.209.100.56 mask 25
+network 168.209.100.56 mask 255.255.255.252
+end
+wr
+
+S4-HO1:
+enable
+conf t
+interface s0/0
+ip address 200.1.111.233 255.255.255.252
+no shutdown
+end
+wr
+
+conf t
+interface s0/0
+ip address 200.1.111.234 255.255.255.252
+no shutdown
+end
+wr
+
+enable
+conf t
+router bgp 1
+no auto-summary
+neighbor 200.1.111.233 remote-as 100
+neighbor 200.1.107.2
+neighbor 200.1.107.242 remote-as 2
+network 200.1.111.232 mask 255.255.255.252
+network 200.1.107.240 mask 255.255.255.252
+end
+wr
+
+show ip bgp summary
+
+enable
+conf t
+interface s0/1
+ip address 200.1.107.241 255.255.255.252
+no shutdown
+clock rate
+clock rate 6
+clock rate 64000
+end
+wr
+
+show ip route 100.73.40.10
+show ip bgp summary
+
+ping 200.1.111.233
+
+S4-HO2:
+enable
+conf t
+interface s0/1
+ip address 200.1.107.242 255.255.255.252
+no shutdown
+end
+w
+wr
+
+enable
+conf t
+router bgp 2
+no auto-summary
+neighbor 200.1.107.241 remote-as 1
+neighbor 100.64.1.129 remote-as 3
+network 200.1.107.240 mask 255.255.255.252
+network 100.64.1.128 mask 255.255.255.252
+end
+wr
+
+enable
+conf t
+router bgp 2
+no auto-summary
+neighbor 200.1.107.241 remote-as 1
+network 200.1.107.240 mask 255.255.255.252
+end
+wr
+
+enable
+conf t
+interface s0/0
+ip address 200.1.107.242 255.255.255.252
+no shutdown
+
+show ip bgp summary
+
+conf t
+interface s0/1
+clock rate 64000
+end
+enable
+conf t
+interface s0/1
+encapsulate hdlc
+
+end
+enable
+conf t
+interface s0/1
+encapsulation hdlc
+no shutdown
+end
+wr
+
+ping 200.1.107.242
+
+S4-HO3:
+enable
+conf t
+interface s0/1
+ip address 100.64.1.129 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+router bgp 3
+no auto-summary
+neighbor 100.64.1.130 remote-as 2
+network 100.64.1.128 mask 255.255.255.252
+end
+w
+wr
+enable
+conf t
+interface s0/1
+ip address 100.64.1.129 255.255.255.252
+no shutdown
+router bgp 3
+no auto-summary
+neighbor 100.64.1.130 remote-as 2
+network 100.65.1.128 mask 225.255.255.252
+end
+wr
+wr
+enable
+conf t
+interface s0/1
+ip address 100.64.1.129 255.255.255.252
+no shutdown
+end
+wr
+show ip interface brief
+enable
+conf t
+interface s0/1
+clock rate 64000
+end
+conf t
+router bgp 3
+no network 100.65.1.128 mask 255.255.255.252
+network 100.64.1.128 mask 255.255.255.252
+end
+wr
+show ip bgp summary
+
+enable
+conf t
+interface s0/1
+encapsulation hdlc
+no shutdown
+end
+wr
+wr
+show controllers serial 0/1
+wic_info 0x657717F0
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+no shutdown
+encapsulate hdlc
+
+encapsulation hdlc
+show controllers serial 0/1
+
+end
+sh
+show controllers serial 0/1
+wic_info 0x657717F0
+
+show cdp neighbors detail
+
+show cdp neighbors
+
+conf t
+interface s0/1
+ip address 200.1.107.145 255.255.255.252
+enn
+
+encapsulation hdlc
+no shutdown
+end
+wr
+
+ping 200.1.107.146
+
+show cdp neighbors
+
+conf t
+interface s0/1
+shutdown
+no ip ad
+no ip address
+ip address 200.1.107.145 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+wr
+
+ping 200.1.107.146
+
+show ip interface brief
+
+show cdp neighbors
+
+show ip interface brief
+
+conf t
+interface s0/1
+shutdown
+exit
+interface
+interface s0/0
+ip address 200.1.107.145 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+w
+wr
+ping 200.1.107.145
+
+ping 200.1.107.146
+
+ping 200.1.107.146
+
+S4-HO4:
+enable
+conf t
+interface s0/1
+ip address 200.1.107.146 255.255.255.252
+no shutdown
+end
+wr
+wr
+wr
+show ip interface brief
+
+ping 200.1.107.144
+
+ping ping 200.1.111.18
+
+ping 200.1.111.18
+
+ping 200.1.107.145
+
+ping 200.1.107.145
+
+show ip interface brief
+
+S4-HO5:
+enable
+conf t
+interface s0/0
+ip address 200.1.107.145 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/0
+ip address 200.1.111.26 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 200.1.111.17 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 5
+no auto-summary
+neighbor 200.1.111.25 remote-as 4
+neighbor 200.1.111.18 remote-as 6
+network 200.1.111.24 mask 255.255.255.252
+network 200.1.111.16 mask 255.255.255.252
+end
+wr
+wr
+show ip interface brief
+
+show cdp neighbors
+
+ping 200.1.111.18
+
+show ip interface brief
+
+show ip interface brief
+
+show cdp neighbors
+
+conf t
+interface s0/0
+no ip address
+ip address 200.1.107.145 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+ping 200.1.107.146
+
+ping 200.1.107.146
+
+S4-HO6:
+enable
+conf t
+interface s0/0
+ip address 200.1.111.18 255.255.255.252
+no shutdown
+end
+w
+wr
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 190.242.180.45 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+router bgp 6
+no auto-summary
+neighbor 200.1.111.17 remote-as 5
+neighbor 190.242.180.46 remote-as 7
+network 200.1.111.16 mask 22
+network 200.1.111.16 mask 225.255.255.252
+end
+enable
+conf t
+router bgp 6
+no auto-summary
+neighbor 200.1.111.17 remote-as 5
+neighbor 190.242.180.46 remote-as 7
+network 200.1.111.16 mask 255.255.255.252
+network 190.242.180.44 mask 255.255.255.252
+end
+wr
+
+ping 200.1.111.17
+
+show ip interface brief
+
+show cdp neighbors
+
+ping 190.242.180.46
+
+S4-HO7:
+enable
+conf t
+interface s0/0
+ip address 190.242.180.46 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 69.79.100.129 255.255.255.252
+no shutdown
+end
+wr
+wr
+
+show ip
+show ip interface brief
+enable
+conf t
+router bgp 7
+no auto-summary
+neighbor 190.242.180.45 remote-as 6
+neighbor 69.79.100.130 remote-as 8
+network 190.242.1
+network 190.242.180.44 mask 255.255.255.252
+network 69.79.100.128 mask 255.255.255.252
+end
+wr
+wr
+show ip interface brief
+
+show cdp neighbors
+
+ping 190.242.180.46
+
+ping 190.242.180.46
+
+S4-HO8:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.130 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 69.79.100.37 255.255.255.252
+no shutdown
+end
+wr
+show ip interface brief
+
+enable
+conf t
+router bgp 8
+no auto-summary
+neighbor 69.79.100.129 remote-as 7
+neighbor 69.79.100.3
+neighbor 69.79.100.38 remote-as 9
+network 69.79.100.128 mask 255.255.255.252
+network 69.79.100.36 mask 255.255.255.252
+end
+wr
+wr
+ping 69.79.100.129
+
+ping 69.79.100.129
+
+show ip interface brief
+
+show cdp neighbors
+
+ping 69.79.100.38
+
+S4-HO9:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.38 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 69.79.100.1 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+router bgp 9
+no auto-summary
+neighbor 69.79.100.37 remote-as 8
+neighbor 69.79.100.2 remote-as 10
+network 69.79.100.36 mask 255.255.255.252
+network 69
+network 69.79.100.0 mask 255.255.255.252
+end
+wr
+show ip interface brief
+
+show cdp neighbors
+
+ping 69.79.100.37
+
+ping 69.79.100.37
+
+S4-HO10:
+enable
+conf t
+interface s0/0
+ip address 69.79.100.2 255.255.255.252
+no shutdown
+end
+wr
+wr
+
+enable
+conf t
+interface s0/1
+ip address 154.54.167.185 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 10
+no auto-summary
+neighbor 69.79.100.1 remote-as 9
+neighbor 154.54.167.186 remote-as 11
+network 69.79
+network 69.79.100.0 mask 255.255.255.252
+network 154.54.167.184 mask 255.255.255.252
+end
+wr
+
+show ip interface brief
+
+show controllers serial 0/0
+wic_info 0x657675F8
+
+conf t
+interface s0/0
+clock rate 64000
+end
+69.79.100.1
+
+ping 69.79.100.2
+
+S4-HO11:
+enable
+conf t
+interface s0/0
+ip address 154.54.167.186 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 154.54.47.50 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 11
+no auto-summary
+neighbor 154.54.167.185 remote-as 10
+neighbor 154.54.47.49 remote-as 1
+neighbor 154.54.47.49 remote-as 12
+network 154.54.167.184 mask 255.255.255.252
+network 154.54.47.48 mask 255.255.255.252
+end
+wr
+wr
+ping 154.54.47.50
+
+show ip interface brief
+
+ping 154.54.167.185
+
+ping 154.54.167.185
+
+S4-HO12:
+enable
+conf t
+interface s0/0
+ip address 154.54.47.49 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 154.54.169.178 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 12
+no auto-summary
+neighbor 154.54.47.50 remote-as 11
+neighbor 154.5
+neighbor 154.54.169.177 remote-as 13
+network 154.54.47.48 mask 255.255.255.252
+network 154.54.169.176 mask 255.255.255.252
+end
+wr
+ping 154.54.169.178
+
+ping 154.54.169.177
+
+S4-HO13:
+enable
+conf t
+interface s0/0
+ip address 154.54.169.177 255.255.255.252
+no shutdown
+end
+qr
+
+enable
+conf t
+interface s0/0
+ip address 154.54.
+ip address 154.54.169.177 255.255.255.252
+no shutdown
+end
+wr
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 154.54.170.69 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 13
+no auto-summary
+neighbor 154.54.169.178 remote-as 12
+neighbor 154.54.170.70 remote-as 14
+network 154.54.169.176 mask 255.
+network 154.54.169.176 mask 255.255.255.252
+network 154.54.170.68 mask 255.255.255.252
+end
+wr
+
+show ip interface brief
+show cp neighbors
+
+show cdp neighbors
+
+ping 154.54.169.177
+
+S4-HO14:
+enable
+conf t
+interface s0/0
+ip address 154.54.170.70 255.255.255.252
+no shutdown
+end
+wr
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 154.54.167.69 255.255.255.252
+no shutdown
+end
+wr
+wr
+show ip interface brief
+enable
+conf t
+router bgp 14
+no auto-summary
+neighbor 154.54.170.69 remote-as 13
+neighbor 154.54.167.70 remote-as 15
+network 154.
+network 154.54.170.68 mask 255.255.255.252
+network 154.54.167.68 mask 255.255.255.252
+end
+wr
+ping 154.54.167.69
+
+show ip interface brief
+
+S4-HO15:
+enable
+conf t
+interface s0/0
+ip address 154.54.167.70 255.255.255.252
+no shutdown
+end
+wr
+wr
+wr
+show ip interface brief
+enable
+conf t
+interface s0/1
+ip address 154.54.75.150 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 15
+no auto-summary
+neighbor 154.54.167.69 remote-as 14
+neighbor 154.54.75.149 remote-as 16
+network 154.54.167.68 ma
+network 154.54.167.68 mask 255.255.255.252
+network 154.54.75.148 mask 255.255.255.252
+end
+wr
+show ip interface brief
+
+show ip route
+
+wr
+
+S4-HO16:
+enable
+conf t
+interface s0/0
+ip address 154.54.75.149 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+
+enable
+conf t
+interface s0/1
+ip address 154.54.74.141 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 16
+no auto-summary
+neighbor 154.54.75.150 remote-as 15
+neighbor 154.54.74.142 remote-as 17
+network 154.54.75.148 mask 255.255.255.252
+network 154.54.74.140 mask 255.255.255.252
+end
+wr
+conf t
+interface s0/0
+ip address 154.54.75.149 255.255.255.252
+no shutdown
+encapsulation hdlc
+end
+show controllers serial 0/0
+wic_info 0x657675F8
+
+clock rate 64000
+
+conf t
+interface s0/0
+clock rate 64000
+end
+show ip interface brief
+
+show ip interface brief
+
+conf t
+interface s0/0
+ip address 154.54.75.149 255.255.255.252
+encapsulation hdlc
+no shutdown
+interface s0/0
+clock rate 64000
+end
+ip
+show ip interface brief
+
+show ip interface brief
+
+ping 154.54.75.150
+
+show ip interface brief
+
+show controllers serial 0/0
+wic_info 0x657675F8
+
+ping 154.54.75.149
+
+wr
+show ip interface brief
+
+how cdp neighbors
+
+show cdp neighbors
+
+show run interface s0/0
+
+interface Serial0/0
+ip address 154.54.75.149 255.255.255.252
+clock rate 64000
+end
+
+conf t
+interface s0/0
+shutdown
+no ip address
+no ip address
+no ip address
+exit
+interface s0/1
+ip address 154.54.75.149 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+wr
+show  ip interface brief
+
+show ip interface brief
+
+S4-HO17:
+enable
+conf t
+interface s0/0
+ip address 154.54.74.142 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+interface s0/1
+ip address 149.6.148.133 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 17
+no auto-summary
+neighbor 154.54.74.141 remote-as 16
+neighb
+neighbor 149.6.148.134 remote-as 18
+network 154.54.74.140 mask 255.255.255.252
+network 149.6.148.132 mask 255.255.255.252
+end
+wr
+conf t
+interface s0/1
+ip address 154.54.74.142 255.255.255.252
+no shutdown
+encapsulation hdlc
+end
+show ip interface brief
+
+ping 154.54.74.141
+
+wr
+show cdp neighbors
+
+conf t
+interface s0/0
+ip address 154.54.75.150 255.255.255.252
+no shutdown
+encapsulation hdlc
+end
+wr
+ping 154.54.75.150
+
+ping 154.54.75.149
+
+ping 154.54.75.149
+
+show ip interface brief
+
+ping 154.54.75.149
+
+conf t
+interface s0/0
+shutdown
+no
+no ip address
+exit
+interface s0/1
+shutdown
+no ip a
+no ip address
+exit
+interface s0/1
+ip address 154.54.74.142 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+show ip interface brief
+
+conf t
+interface s0/0
+no shutdown
+encap
+encapsu
+encapsulation hdlc
+show ip interface brief
+
+end
+conf t
+interface s0/0
+ip address 154.54.75.150 255.255.255.252
+no shutdown
+encapsulation hdlc
+end
+show ip interface brief
+
+ping 154.54.75.149
+
+ping 154.54.75.149
+
+ping 154.54.74.141
+
+ping 154.54.75.149
+
+show ip interface brief
+
+S4-HO18:
+enable
+conf t
+interface s0/0
+ip address 149.6.148.134 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+interface s0/1
+ip address 168.209.100.57 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 18
+no auto-summary
+neighbor 149.6.148.133 remote-as 17
+neighbor 168.209.100.58 remote-as 19
+network 149.6.148.132 mask 255.255.
+network 149.6.148.132 mask 255.255.255.252
+network 168.209.100.56 mask 255.255.255.252
+end
+wr
+conf t
+interace s0/1
+
+end
+conf t
+interface s0/1
+ip address 168.209.100.58 255.255.255.252
+encapsulation hdlc
+no shutdown
+end
+show ip interface brief
+
+show ip interface brief
+
+show controllers serial 0/1
+wic_info 0x657717F0
+
+conf t
+interface s0/1
+clock rate 64000
+end
+show cdp neighbors
+
+conf t
+interface s0/0
+ip address 154.54.74.141 255.255.255.252
+no shutdown
+encapsulation hdlc
+end
+show controllers serial 0/0
+wic_info 0x657675F8
+
+conf t
+inter
+interface
+interface s0/0
+clock rate 64000
+end
+show ip interface brief
+
+ping 154.54.74.142
+
+wr
+
+S4-HO19:
+enable
+conf t
+interface s0/0
+ip address 168.209.100.58 255.255.255.252
+no shutdown
+end
+wr
+
+show ip interface brief
+enable
+conf t
+router bgp 19
+no auto-summary
+neighbor 168.209.100.57 remote-as 18
+network 168.209.100.56 mask 25
+network 168.209.100.56 mask 255.255.255.252
+end
+wr
+
+show ip interface brief
+
+conf t
+interface s0/0
+ip address 168.209.100.57 255.255.255.252
+no shutdown
+end
+ping 168.209.100.58
+
+show ip interface brief
+
+show cdp neighbors
+
+ping 168.209.100.58
+
+wr
+
