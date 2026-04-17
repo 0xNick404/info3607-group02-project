@@ -3,9 +3,9 @@
                     Student ID: 816046667
 ================================================================================
 STUD2 
-router bgp 65020
+router bgp 65000
  bgp router-id 192.168.2.1
- neighbor 100.73.40.1 remote-as 65000
+ neighbor 100.73.40.1 remote-as 65001
  neighbor 100.73.40.1 description eBGP to Upstream
  !
  address-family ipv4

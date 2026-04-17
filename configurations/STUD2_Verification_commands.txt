@@ -13,7 +13,6 @@ show ip bgp summary
 show ip bgp neighbors
 ping 100.73.40.1
 ping 192.168.1.1
-
 ========================================
 S2-HO1 Verification
 ========================================
@@ -21,9 +20,8 @@ show ip interface brief
 show ip route
 show ip route bgp
 show ip bgp summary
-ping 100.73.40.10
 ping 100.73.40.2
-
+ping 192.168.2.1
 ========================================
 S2-HO2 Verification
 ========================================
