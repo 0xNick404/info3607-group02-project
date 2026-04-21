@@ -7,6 +7,8 @@ router bgp 333
 neighbor 10.0.0.5 remote-as 222
 neighbor 10.0.0.10 remote-as 444
 network 172.16.10.0 mask 255.255.255.224
+network 10.0.0.4 mask 255.255.255.252
+network 10.0.0.8 mask 255.255.255.252
 end
 
 wr
@@ -21,6 +23,8 @@ router bgp 222
 neighbor 10.0.0.1 remote-as 111
 neighbor 10.0.0.6 remote-as 333
 network 172.16.20.0 mask 255.255.255.224
+network 10.0.0.0 mask 255.255.255.252
+network 10.0.0.4 mask 255.255.255.252
 end
 
 wr
@@ -34,6 +38,8 @@ router bgp 111
 
 neighbor 10.0.0.2 remote-as 222
 neighbor 192.168.100.2 remote-as 444
+network 10.0.0.0 mask 255.255.255.252
+network 192.168.100.0 mask 255.255.255.252
 network 172.16.30.0 mask 255.255.255.224
 end
 
@@ -48,6 +54,9 @@ router bgp 444
 neighbor 10.0.0.9 remote-as 333
 neighbor 192.168.100.1 remote-as 111
 neighbor 100.80.0.2 remote-as 7
+network 192.168.100.0 mask 255.255.255.252
+network 10.0.0.8 mask 255.255.255.252
+network 100.80.0.0 mask 255.255.255.252
 end
 
 wr
@@ -61,6 +70,8 @@ router bgp 7
 
 neighbor 100.80.0.1 remote-as 444
 neighbor 181.118.33.130 remote-as 14
+network 100.80.0.0 mask 255.255.255.252
+network 181.118.33.128 mask 255.255.255.252
 end
 
 wr
@@ -74,6 +85,8 @@ router bgp 14
 
 neighbor 181.118.33.129 remote-as 7
 neighbor 181.118.33.189 remote-as 21
+network 181.118.33.128 mask 255.255.255.252
+network 181.118.33.188 mask 255.255.255.252
 end
 
 wr
@@ -87,6 +100,8 @@ router bgp 21
 
 neighbor 181.118.33.190 remote-as 14
 neighbor 181.118.33.177 remote-as 28
+network 181.118.33.188 mask 255.255.255.252
+network 181.118.33.176 mask 255.255.255.252
 end
 
 wr
@@ -99,6 +114,8 @@ router bgp 28
 
 neighbor 181.118.33.178 remote-as 21
 neighbor 179.60.213.110 remote-as 35
+network 181.118.33.176 mask 255.255.255.252
+network 179.60.213.108 mask 255.255.255.252
 end
 
 wr
@@ -111,6 +128,8 @@ router bgp 35
 
 neighbor 179.60.213.109 remote-as 28
 neighbor 179.60.213.14 remote-as 42
+network 179.60.213.108 mask 255.255.255.252
+network 179.60.213.12 mask 255.255.255.252
 end
 
 wr
@@ -123,6 +142,8 @@ router bgp 42
 
 neighbor 179.60.213.13 remote-as 35
 neighbor 181.118.33.212 remote-as 49
+network 179.60.213.12 mask 255.255.255.252
+network 181.118.33.208 mask 255.255.255.248
 end
 
 wr
@@ -135,6 +156,8 @@ router bgp 49
 
 neighbor 181.118.33.211 remote-as 42
 neighbor 172.31.8.238 remote-as 56
+network 181.118.33.208 mask 255.255.255.248
+network 172.31.8.236 mask 255.255.255.252
 end
 
 wr
@@ -147,6 +170,8 @@ router bgp 56
 
 neighbor 172.31.8.237 remote-as 49
 neighbor 63.143.80.10 remote-as 63
+network 172.31.8.236 mask 255.255.255.252
+network 63.143.80.8 mask 255.255.255.252
 end
 
 wr
@@ -159,6 +184,8 @@ router bgp 63
 
 neighbor 63.143.80.9 remote-as 56
 neighbor 64.125.46.26 remote-as 70
+network 63.143.80.8 mask 255.255.255.252
+network 64.125.46.24 mask 255.255.255.252
 end
 
 wr
@@ -171,6 +198,8 @@ router bgp 70
 
 neighbor 64.125.46.25 remote-as 63
 neighbor 64.125.25.49 remote-as 77
+network 64.125.46.24 mask 255.255.255.252
+network 64.125.25.32 mask 255.255.255.224
 end
 
 wr
@@ -183,6 +212,8 @@ router bgp 77
 
 neighbor 64.125.25.48 remote-as 70
 neighbor 64.125.26.113 remote-as 84
+network 64.125.25.32 mask 255.255.255.224
+network 64.125.26.96 mask 255.255.255.224
 end
 
 wr
@@ -195,6 +226,8 @@ router bgp 84
 
 neighbor 64.125.26.112 remote-as 77
 neighbor 64.125.31.101 remote-as 91
+network 64.125.26.96 mask 255.255.255.224
+network 64.125.31.96 mask 255.255.255.248
 end
 
 wr
@@ -207,6 +240,8 @@ router bgp 91
 
 neighbor 64.125.31.100 remote-as 84
 neighbor 64.125.31.56 remote-as 98
+network 64.125.31.96 mask 255.255.255.248
+network 64.125.31.48 mask 255.255.255.240
 end
 
 wr
@@ -220,6 +255,8 @@ router bgp 98
 
 neighbor 64.125.31.55 remote-as 91
 neighbor 64.125.24.17 remote-as 105
+network 64.125.31.48 mask 255.255.255.240
+network 64.125.24.0 mask 255.255.255.224
 end
 
 wr
@@ -232,6 +269,8 @@ router bgp 105
 
 neighbor 64.125.24.16 remote-as 98
 neighbor 64.125.27.50 remote-as 112
+network 64.125.24.0 mask 255.255.255.224
+network 64.125.27.48 mask 255.255.255.252
 end
 
 wr
@@ -244,6 +283,8 @@ router bgp 112
 
 neighbor 64.125.27.49 remote-as 105
 neighbor 64.125.28.152 remote-as 119
+network 64.125.27.48 mask 255.255.255.252
+network 64.125.28.144 mask 255.255.255.240
 end
 
 wr
@@ -256,6 +297,8 @@ router bgp 119
 
 neighbor 64.125.28.151 remote-as 112
 neighbor 195.66.224.197 remote-as 126
+network 64.125.28.144 mask 255.255.255.240
+network 195.66.224.196 mask 255.255.255.252
 end
 
 wr
@@ -269,6 +312,8 @@ router bgp 126
 
 neighbor 195.66.224.198 remote-as 119
 neighbor 168.209.100.57 remote-as 133
+network 195.66.224.196 mask 255.255.255.252
+network 168.209.100.56 mask 255.255.255.252
 end
 
 wr
@@ -282,6 +327,8 @@ router bgp 133
 
 neighbor 168.209.100.58 remote-as 126
 neighbor 168.209.120.2 remote-as 140
+network 168.209.100.56 mask 255.255.255.252
+network 168.209.120.0 mask 255.255.255.0
 end
 
 wr
@@ -295,6 +342,8 @@ router bgp 140
 
 neighbor 168.209.120.67 remote-as 133
 neighbor 196.34.7.196 remote-as 147
+network 168.209.120.0 mask 255.255.255.0
+network 196.34.7.192 mask 255.255.255.248
 end
 
 wr
@@ -307,6 +356,8 @@ router bgp 147
 
 neighbor 196.34.7.195 remote-as 140
 neighbor 16.04.01.61 remote-as 777
+network 196.34.7.192 mask 255.255.255.248
+network 16.04.01.60 mask 255.255.255.252
 end
 
 wr
@@ -320,6 +371,8 @@ router bgp 777
 
 neighbor 16.04.01.62 remote-as 147
 network 172.16.100.0 mask 255.255.255.224
+network 16.04.01.60 mask 255.255.255.252
+network 196.4.160.12 mask 255.255.255.255
 end
 
 wr
