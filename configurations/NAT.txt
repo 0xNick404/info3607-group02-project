@@ -1,0 +1,29 @@
+! ###########################################################
+! PROJECT: FINAL FILE - NAT/PAT CONFIGURATION
+! DESCRIPTION: Translating Private Branch IPs to Public Interface
+! ###########################################################
+
+! --- 1. DEFINE INSIDE AND OUTSIDE INTERFACES ---
+! Apply this on the Branch Router (e.g., SA-R1 or CF-R1)
+interface FastEthernet0/0
+ description St. Augustine LAN (Private)
+ ip nat inside
+
+interface Serial0/0
+ description Connection to Frame Relay Cloud (Public-Facing)
+ ip nat outside
+
+! --- 2. DEFINE THE NAT POOL / INTERESTING TRAFFIC ---
+! This Access List identifies which internal IPs are allowed to be translated
+access-list 1 permit 192.168.1.0 0.0.0.255
+access-list 1 permit 192.168.2.0 0.0.0.255
+
+! --- 3. CONFIGURE NAT OVERLOAD (PAT) ---
+! Maps the internal addresses to the IP of the Serial interface
+ip nat inside source list 1 interface Serial0/0 overload
+
+! --- 4. OPTIONAL: STATIC NAT FOR THE SERVER ---
+! If the FTP/DNS server needs to be reachable from the outside
+ip nat inside source static 192.168.10.50 [External_IP_Address]
+
+! ###########################################################
