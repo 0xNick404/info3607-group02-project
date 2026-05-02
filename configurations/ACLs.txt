@@ -1,0 +1,56 @@
+! ###########################################################
+! PROJECT: FINAL FILE
+! DESCRIPTION: Full ACL Implementation for Regional Connectivity
+! BRANCHES: St. Augustine (SA) & Champs Fleurs (CF)
+! ###########################################################
+
+! --- 1. MANAGEMENT PLANE SECURITY ---
+! Restricted access to VTY lines for remote configuration
+access-list 10 remark == AUTHORIZED ADMIN HOSTS ONLY ==
+access-list 10 permit 192.168.1.10
+access-list 10 deny any log
+
+! --- 2. REGIONAL TRAFFIC POLICY (EXTENDED) ---
+! Applied at the distribution layer to manage branch communication
+ip access-list extended BRANCH_SECURITY_POLICY
+ remark == Allow DHCP and DNS to Central Server ==
+ permit udp 192.168.1.0 0.0.0.255 host 192.168.10.50 eq bootps
+ permit udp 192.168.2.0 0.0.0.255 host 192.168.10.50 eq bootps
+ permit udp any host 192.168.10.50 eq domain
+
+ remark == Allow ICMP (Ping) for Network Troubleshooting ==
+ permit icmp 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255
+ permit icmp 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255
+
+ remark == Restrict Inter-Branch Web Traffic ==
+ deny tcp 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255 eq www
+ permit ip any any
+
+! --- 3. SERVER FARM PROTECTION ---
+! Hardening the FTP/NTP/DNS Server node
+ip access-list extended SERVER_ARMOR
+ remark == Permit FTP Services ==
+ permit tcp any host 192.168.10.50 eq ftp
+ permit tcp any host 192.168.10.50 eq ftp-data
+ 
+ remark == Permit Time Synchronization ==
+ permit udp any host 192.168.10.50 eq ntp
+ 
+ remark == Explicit Deny for Unauthorized Server Access ==
+ deny ip any host 192.168.10.50 log
+ permit ip any any
+
+! --- 4. INTERFACE APPLICATION ---
+! Example application to local interfaces
+interface FastEthernet0/0
+ description St. Augustine LAN
+ ip access-group BRANCH_SECURITY_POLICY in
+
+interface FastEthernet1/1
+ description Server Farm Link
+ ip access-group SERVER_ARMOR out
+
+line vty 0 4
+ access-class 10 in
+ transport input ssh
+! ###########################################################
