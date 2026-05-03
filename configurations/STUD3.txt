@@ -1,0 +1,304 @@
+!! ! STUD3
+
+config t
+
+interface serial0/0
+ ip address 192.168.100.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 300
+ neighbor 192.168.100.2 remote-as 301
+ network 172.16.50.0 mask 255.255.255.224
+ network 192.168.100.0 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO1
+
+config t
+
+interface serial0/0
+ ip address 192.168.100.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 100.84.0.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 301
+ neighbor 192.168.100.1 remote-as 300
+ neighbor 100.84.0.2 remote-as 302
+ network 192.168.100.0 mask 255.255.255.252
+ network 100.84.0.0 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO2
+
+config t
+
+interface serial0/0
+ ip address 100.84.0.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 181.118.33.132 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+router bgp 302
+ neighbor 100.84.0.1 remote-as 301
+ neighbor 181.118.33.133 remote-as 303
+ network 100.84.0.0 mask 255.255.255.252
+ network 181.118.33.128 mask 255.255.255.248
+ end
+
+wr
+
+
+!! ! S3-HO3
+
+config t
+
+interface serial0/0
+ ip address 181.118.33.133 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 181.118.33.165 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 303
+ neighbor 181.118.33.132 remote-as 302
+ neighbor 181.118.33.166 remote-as 304
+ network 181.118.33.128 mask 255.255.255.248
+ network 181.118.33.164 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO4
+
+config t
+
+interface serial0/0
+ ip address 181.118.33.166 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 181.118.33.169 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 304
+ neighbor 181.118.33.165 remote-as 303
+ neighbor 181.118.33.170 remote-as 305
+ network 181.118.33.164 mask 255.255.255.252
+ network 181.118.33.168 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO5
+
+config t
+
+interface serial0/0
+ ip address 181.118.33.170 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 179.60.213.194 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 305
+ neighbor 181.118.33.169 remote-as 304
+ neighbor 179.60.213.193 remote-as 306
+ network 181.118.33.168 mask 255.255.255.252
+ network 179.60.213.192 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO6
+
+config t
+
+interface serial0/0
+ ip address 179.60.213.193 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 179.60.213.57 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 306
+ neighbor 179.60.213.194 remote-as 305
+ neighbor 179.60.213.58 remote-as 307
+ network 179.60.213.192 mask 255.255.255.252
+ network 179.60.213.56 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO7
+
+config t
+
+interface serial0/0
+ ip address 179.60.213.58 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 181.118.33.205 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 307
+ neighbor 179.60.213.57 remote-as 306
+ neighbor 181.118.33.206 remote-as 308
+ network 179.60.213.56 mask 255.255.255.252
+ network 181.118.33.204 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO8
+
+config t
+
+interface serial0/0
+ ip address 181.118.33.206 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 172.31.13.14 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 308
+ neighbor 181.118.33.205 remote-as 307
+ neighbor 172.31.13.13 remote-as 309
+ network 181.118.33.204 mask 255.255.255.252
+ network 172.31.13.12 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO9
+
+config t
+
+interface serial0/0
+ ip address 172.31.13.13 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 195.50.122.230 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+router bgp 309
+ neighbor 172.31.13.14 remote-as 308
+ neighbor 195.50.122.229 remote-as 310
+ network 172.31.13.12 mask 255.255.255.252
+ network 195.50.122.228 mask 255.255.255.252
+ end
+
+wr
+
+
+!! ! S3-HO10
+
+config t
+
+interface serial0/0
+ ip address 195.50.122.229 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 168.209.100.16 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+router bgp 310
+ neighbor 195.50.122.230 remote-as 309
+ neighbor 168.209.100.17 remote-as 311
+ network 195.50.122.228 mask 255.255.255.252
+ network 168.209.100.0 mask 255.255.255.224
+ end
+
+wr
+
+
+!! ! S3-HO11
+
+config t
+
+interface serial0/0
+ ip address 168.209.100.17 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+interface fa0/0
+ ip address 168.209.120.13 255.255.255.0
+ shutdown
+ no shutdown
+ exit
+
+router bgp 311
+ neighbor 168.209.100.16 remote-as 310
+ neighbor 168.209.120.2 remote-as 140
+ neighbor 168.209.120.67 remote-as 133
+ network 168.209.100.0 mask 255.255.255.224
+ network 168.209.120.0 mask 255.255.255.0
+ end
+
+wr
