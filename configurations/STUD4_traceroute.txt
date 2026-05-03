@@ -1,0 +1,396 @@
+----------------------------------------------------------------------------
+                        STUD4 - TRACEROUTE - 816034813
+----------------------------------------------------------------------------
+
+STUD4 
+
+config t
+
+interface fastEthernet0/0
+ ip address 192.168.1.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO1
+
+config t
+
+interface serial0/0
+ ip address 200.1.111.234 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.173.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO2
+
+config t
+
+interface serial0/0
+ ip address 154.54.173.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.172.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO3
+
+config t
+
+interface serial0/0
+ ip address 154.54.172.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.171.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO4
+
+config t
+
+interface serial0/0
+ ip address 154.54.171.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.170.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO5
+
+config t
+
+interface serial0/0
+ ip address 154.54.170.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.169.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO6
+
+config t
+
+interface serial0/0
+ ip address 154.54.169.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 190.242.180.45 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO7
+
+config t
+
+interface serial0/0
+ ip address 190.242.180.46 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.167.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO8
+
+config t
+
+interface serial0/0
+ ip address 154.54.167.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.168.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+
+S4-HO9
+
+config t
+
+interface serial0/0
+ ip address 154.54.168.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.166.1 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+
+S4-HO10
+
+config t
+
+interface serial0/0
+ ip address 154.54.166.2 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.167.185 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+
+S4-HO11
+
+config t
+
+interface serial0/0
+ ip address 154.54.167.186 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.47.50 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+
+S4-HO12
+
+config t
+
+interface serial0/0
+ ip address 154.54.47.49 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.169.178 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO13
+
+config t
+
+interface serial0/0
+ ip address 154.54.169.177 255.255.255.248
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.170.69 255.255.255.240
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO14
+
+config t
+
+interface serial0/0
+ ip address 154.54.170.70 255.255.255.240
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.167.69 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO15
+
+config t
+
+interface serial0/0
+ ip address 154.54.167.70 255.255.255.224
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.75.150 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO16	
+
+config t
+
+interface serial0/0
+ ip address 154.54.75.149 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.75.153 255.255.255.240
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO17
+
+config t
+
+interface serial0/0
+ ip address 154.54.75.154 255.255.255.240
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.75.157 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO18
+
+config t
+
+interface serial0/0
+ ip address 154.54.75.158 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+interface serial0/1
+ ip address 154.54.75.161 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+----------------------------------------------------------------------------
+
+S4-HO19
+
+config t
+
+interface serial0/0
+ ip address 154.54.75.162 255.255.255.252
+ shutdown
+ no shutdown
+ exit
+
+wr
+
+
+

@@ -1,0 +1,274 @@
+----------------------------------------------------------------------------
+                         eBGP - ALL ROUTERS - 816034813
+----------------------------------------------------------------------------
+
+
+
+
+STUD4#
+STUD4#enable
+STUD4#show run | section bgp
+router bgp 100
+ no synchronization
+ bgp log-neighbor-changes
+ network 192.168.1.0
+ network 200.1.111.232 mask 255.255.255.252
+ neighbor 200.1.111.234 remote-as 1
+ no auto-summary
+
+
+
+S4-HO1#enable
+S4-HO1#show run | section bgp
+router bgp 1
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.173.0 mask 255.255.255.252
+ network 200.1.107.240 mask 255.255.255.252
+ network 200.1.111.232 mask 255.255.255.252
+ neighbor 154.54.173.1 remote-as 2
+ neighbor 200.1.107.242 remote-as 2
+ neighbor 200.1.111.233 remote-as 100
+ no auto-summary
+
+
+S4-HO2#enable
+S4-HO2#show run | section bgp
+router bgp 2
+ no synchronization
+ bgp log-neighbor-changes
+ network 100.64.1.128 mask 255.255.255.252
+ network 154.54.172.0
+ network 154.54.172.0 mask 255.255.255.252
+ network 154.54.173.0 mask 255.255.255.252
+ network 200.1.107.240 mask 255.255.255.252
+ neighbor 154.54.172.1 remote-as 3
+ neighbor 154.54.173.2 remote-as 1
+ neighbor 200.1.107.241 remote-as 1
+ no auto-summary
+
+
+
+S4-HO3#enable
+S4-HO3#show run | section bgp
+router bgp 3
+ no synchronization
+ bgp log-neighbor-changes
+ network 100.64.1.128 mask 255.255.255.252
+ network 154.54.169.0 mask 255.255.255.252
+ network 154.54.171.0 mask 255.255.255.252
+ network 154.54.172.0 mask 255.255.255.252
+ neighbor 100.64.1.130 remote-as 2
+ neighbor 154.54.171.1 remote-as 4
+ neighbor 154.54.172.2 remote-as 2
+ neighbor 154.54.172.2 next-hop-self
+ no auto-summary
+
+
+
+S4-HO4#enable
+S4-HO4#show run | section bgp
+router bgp 4
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.170.0 mask 255.255.255.252
+ network 154.54.171.0 mask 255.255.255.252
+ neighbor 154.54.170.1 remote-as 5
+ neighbor 154.54.171.2 remote-as 3
+ no auto-summary
+
+
+
+S4-HO5#enable
+S4-HO5#show run | section bgp
+router bgp 5
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.169.0 mask 255.255.255.252
+ network 154.54.170.0 mask 255.255.255.252
+ network 200.1.111.16 mask 255.255.255.252
+ network 200.1.111.24 mask 255.255.255.252
+ neighbor 154.54.169.1 remote-as 6
+ neighbor 154.54.170.2 remote-as 4
+ neighbor 200.1.111.18 remote-as 6
+ neighbor 200.1.111.25 remote-as 4
+ no auto-summary
+
+
+
+S4-HO6#enable
+S4-HO6#show run | section bgp
+router bgp 6
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.169.0 mask 255.255.255.252
+ network 190.242.180.44 mask 255.255.255.252
+ network 200.1.111.16 mask 255.255.255.252
+ neighbor 154.54.169.2 remote-as 5
+ neighbor 190.242.180.46 remote-as 7
+ neighbor 200.1.111.17 remote-as 5
+ no auto-summary
+
+
+
+S4-HO7#enable
+S4-HO7#show run | section bgp
+router bgp 7
+ no synchronization
+ bgp log-neighbor-changes
+ network 69.79.100.128 mask 255.255.255.252
+ network 190.242.180.44 mask 255.255.255.252
+ neighbor 154.54.167.2 remote-as 8
+ neighbor 190.242.180.45 remote-as 6
+ neighbor 190.242.180.45 next-hop-self
+ no auto-summary
+
+
+S4-HO8#enable
+S4-HO8#show run | section bgp
+router bgp 8
+ no synchronization
+ bgp log-neighbor-changes
+ network 69.79.100.36 mask 255.255.255.252
+ network 69.79.100.128 mask 255.255.255.252
+ network 154.54.168.0 mask 255.255.255.252
+ neighbor 154.54.167.1 remote-as 7
+ neighbor 154.54.168.2 remote-as 9
+ no auto-summary
+
+
+
+S4-HO9#enable
+S4-HO9#show run | section bgp
+router bgp 9
+ no synchronization
+ bgp log-neighbor-changes
+ network 69.79.100.0 mask 255.255.255.252
+ network 69.79.100.36 mask 255.255.255.252
+ network 154.54.166.0 mask 255.255.255.252
+ neighbor 154.54.166.2 remote-as 10
+ neighbor 154.54.168.1 remote-as 8
+ no auto-summary
+
+
+S4-HO10#enable
+S4-HO10#show run | section bgp
+router bgp 10
+ no synchronization
+ bgp log-neighbor-changes
+ network 69.79.100.0 mask 255.255.255.252
+ network 154.54.167.184 mask 255.255.255.252
+ neighbor 154.54.166.1 remote-as 9
+ neighbor 154.54.167.186 remote-as 11
+ no auto-summary
+
+
+S4-HO11#enable
+S4-HO11#show run | section bgp
+router bgp 11
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.47.48 mask 255.255.255.252
+ network 154.54.167.184 mask 255.255.255.252
+ neighbor 154.54.47.49 remote-as 12
+ neighbor 154.54.167.185 remote-as 10
+ no auto-summary
+
+
+
+S4-HO12#enable
+S4-HO12#show run | section bgp
+router bgp 12
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.47.48 mask 255.255.255.252
+ network 154.54.169.176 mask 255.255.255.252
+ neighbor 154.54.47.50 remote-as 11
+ neighbor 154.54.169.177 remote-as 13
+ no auto-summary
+
+
+
+S4-HO13#enable
+S4-HO13#show run | section bgp
+router bgp 13
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.169.176 mask 255.255.255.252
+ network 154.54.170.68 mask 255.255.255.252
+ neighbor 154.54.169.178 remote-as 12
+ neighbor 154.54.170.70 remote-as 14
+ no auto-summary
+
+
+
+S4-HO14#enable
+S4-HO14#show run | section bgp
+router bgp 14
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.167.68 mask 255.255.255.252
+ network 154.54.170.68 mask 255.255.255.252
+ neighbor 154.54.167.70 remote-as 15
+ neighbor 154.54.170.69 remote-as 13
+ no auto-summary
+
+
+S4-HO15#show run | section bgp
+router bgp 15
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.75.148 mask 255.255.255.252
+ network 154.54.167.68 mask 255.255.255.252
+ neighbor 154.54.75.149 remote-as 16
+ neighbor 154.54.167.69 remote-as 14
+ no auto-summary
+
+
+
+S4-HO16#enable
+S4-HO16#show run | section bgp
+router bgp 16
+ no synchronization
+ bgp log-neighbor-changes
+ network 154.54.74.140 mask 255.255.255.252
+ network 154.54.75.148 mask 255.255.255.252
+ network 154.54.75.152 mask 255.255.255.252
+ neighbor 154.54.75.150 remote-as 15
+ neighbor 154.54.75.154 remote-as 17
+ no auto-summary
+
+
+
+S4-HO17#enable
+S4-HO17#show run | section bgp
+router bgp 17
+ no synchronization
+ bgp log-neighbor-changes
+ network 149.6.148.132 mask 255.255.255.252
+ network 154.54.74.140 mask 255.255.255.252
+ network 154.54.75.152 mask 255.255.255.252
+ neighbor 154.54.75.153 remote-as 16
+ no auto-summary
+
+
+
+S4-HO18#enable
+S4-HO18#show run | section bgp
+router bgp 18
+ no synchronization
+ bgp log-neighbor-changes
+ network 149.6.148.132 mask 255.255.255.252
+ network 168.209.100.56 mask 255.255.255.252
+ neighbor 154.54.75.162 remote-as 19
+ no auto-summary
+
+
+S4-HO19#enable
+S4-HO19#show run | section bgp
+router bgp 19
+ no synchronization
+ bgp log-neighbor-changes
+ network 168.209.100.56 mask 255.255.255.252
+ neighbor 154.54.75.161 remote-as 18
+ no auto-summary
