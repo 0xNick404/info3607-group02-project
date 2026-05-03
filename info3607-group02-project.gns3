@@ -4166,9 +4166,9 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "7ff6523a-f826-4f52-b7fd-86ba084f5d95",
                 "width": 66,
-                "x": -106,
-                "y": 789,
-                "z": -2
+                "x": -109,
+                "y": 800,
+                "z": 1
             },
             {
                 "compute_id": "local",
@@ -5701,7 +5701,7 @@
                 "template_id": "7ff6523a-f826-4f52-b7fd-86ba084f5d95",
                 "width": 66,
                 "x": 682,
-                "y": -299,
+                "y": -302,
                 "z": 1
             },
             {
@@ -5996,7 +5996,7 @@
                 "template_id": "7ff6523a-f826-4f52-b7fd-86ba084f5d95",
                 "width": 66,
                 "x": 686,
-                "y": 953,
+                "y": 956,
                 "z": 1
             },
             {
@@ -6703,8 +6703,8 @@
                 "symbol": ":/symbols/router.svg",
                 "template_id": "7ff6523a-f826-4f52-b7fd-86ba084f5d95",
                 "width": 66,
-                "x": 996,
-                "y": 217,
+                "x": 978,
+                "y": 358,
                 "z": 1
             },
             {
@@ -8481,6 +8481,6 @@
     },
     "type": "topology",
     "variables": [],
-    "version": "2.2.52",
-    "zoom": 49
+    "version": "2.2.54",
+    "zoom": 35
 }
