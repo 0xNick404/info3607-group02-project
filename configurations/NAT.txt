@@ -1,0 +1,36 @@
+!! ! STUD1
+
+config t
+
+interface fa0/0
+ ip nat inside
+ exit
+
+interface s0/0.410
+ ip nat outside
+ exit
+
+access-list 1 permit 172.16.30.0 0.0.0.31
+
+ip nat inside source list 1 interface s0/0.410 overload
+
+wr
+
+
+!! ! STUD3
+
+config t
+
+interface fa0/0
+ ip nat inside
+ exit
+
+interface s0/0
+ ip nat outside
+ exit
+
+access-list 1 permit 172.16.50.0 0.0.0.31
+
+ip nat inside source list 1 interface s0/0 overload
+
+wr
