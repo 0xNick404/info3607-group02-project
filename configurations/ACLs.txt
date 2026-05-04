@@ -33,6 +33,8 @@ permit tcp 172.16.30.0 0.0.0.31 172.16.60.0 0.0.0.31 eq 22
 ! Deny any
 deny ip any any
 
+exit
+
 interface fa0/0
  ip access-group ACL_STUD1 in
  end
@@ -73,6 +75,8 @@ permit tcp 172.16.20.0 0.0.0.31 172.16.60.0 0.0.0.31 eq 22
 
 ! Deny any
 deny ip any any
+
+exit
 
 interface fa0/0
  ip access-group ACL_Champs_Fleurs in
