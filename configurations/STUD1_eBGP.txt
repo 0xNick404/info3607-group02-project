@@ -329,6 +329,7 @@ neighbor 168.209.100.58 remote-as 126
 neighbor 168.209.120.2 remote-as 140
 neighbor 168.209.120.13 remote-as 311
 neighbor 168.209.120.12 remote-as 65017
+neighbor 168.209.120.14 remote-as 20
 network 168.209.100.56 mask 255.255.255.252
 network 168.209.120.0 mask 255.255.255.0
 end
@@ -346,6 +347,7 @@ neighbor 168.209.120.67 remote-as 133
 neighbor 196.34.7.196 remote-as 147
 neighbor 168.209.120.13 remote-as 311
 neighbor 168.209.120.12 remote-as 65017
+neighbor 168.209.120.14 remote-as 20
 network 168.209.120.0 mask 255.255.255.0
 network 196.34.7.192 mask 255.255.255.248
 end
