@@ -297,6 +297,7 @@ router bgp 311
  neighbor 168.209.100.16 remote-as 310
  neighbor 168.209.120.2 remote-as 140
  neighbor 168.209.120.67 remote-as 133
+ neighbor 168.209.120.12 remote-as 65017
  network 168.209.100.0 mask 255.255.255.224
  network 168.209.120.0 mask 255.255.255.0
  end
