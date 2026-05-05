@@ -1,0 +1,25 @@
+!! ! STUD2
+
+config t
+
+interface Tunnel1
+ ip address 10.10.10.1 255.255.255.0
+ tunnel source s0/0
+ tunnel destination 192.168.0.1
+ no shutdown
+ end
+
+wr
+
+!! ! STUD4
+
+config t
+
+interface Tunnel1
+ ip address 10.10.10.3 255.255.255.0
+ tunnel source s0/0
+ tunnel destination 192.168.101.1
+ no shutdown
+ end
+
+wr
